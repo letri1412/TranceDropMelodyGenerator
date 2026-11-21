@@ -1,0 +1,11 @@
+TranceDropMelodyGenerator
+Copyright (c) 2026 letri1412 - TranceDropMelodyGenerator
+
+本产品包含由以下第三方组件生成/依赖的软件：
+* PyTorch (BSD-3-Clause)
+* NumPy (BSD-3-Clause)
+* mido (MIT)
+* music21 (BSD-3-Clause) — 仅在可选工具脚本中使用
+* transformers / tokenizers (Apache-2.0) — 仅在 Step B 实验脚本中使用（非交付链路）
+
+完整许可证文本见各依赖包内 LICENSE 文件。
