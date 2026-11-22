@@ -1,4 +1,21 @@
+---
+license: other
+license_name: Apache-2.0 (code) / OpenRAIL-M (weights)
+tags:
+- trance
+- midi
+- music-generation
+- symbolic-music
+- pytorch
+---
+
 # TranceDropMelodyGenerator
+
+## 在线地址
+
+* GitHub: https://github.com/letri1412/TranceDropMelodyGenerator
+* ModelScope（魔搭）: https://www.modelscope.cn/models/letri1412/TranceDropMelodyGenerator
+
 
 > 用小模型生成 Trance drop 主旋律 MIDI：给定 **调性 + BPM + 和弦进行 + 16 分节奏型**，输出 8 小节「主旋律 + 低音踏板」双声部 MIDI。
 > 纯 CPU 可训练、可推理；单模型 0.33M 参数，12 epoch ≈ 70 秒。
@@ -69,6 +86,25 @@ test 集 11 首（训练时从未见过）/ 44 个 8 小节窗口，3 模型集�
 
 > v2 比 v1 更「活」（音程/音域更接近语料），v1 更平滑稳定。示例在 `demos/v2/`、`demos/v1/`。
 
+## 在魔搭（ModelScope）加载
+
+模型仓库根目录已包含平台要求的文件：
+
+```
+configuration.json   平台元数据（framework=pytorch, pipeline=dummy）
+config.json          架构超参（d_model / n_layers / n_heads / 词表）
+model.pt             顶层主模型（v2 pitch，示例）
+model_interval.pt    顶层音程模型（v2 interval，示例）
+MODEL_STRUCTURE.md   结构说明与文件对应关系
+example_inference.py 最小推理示例
+runs/                完整权重（每个模型 3 个种子，供集成）
+```
+
+```bat
+pip install -r requirements.txt
+python example_inference.py
+```
+
 ## 4. 安装
 
 要求：**Python 3.10+**（开发与测试用 3.15）、Windows/Linux/macOS 均可，**不需要 GPU**。
@@ -93,11 +129,13 @@ PYTHONPATH=_bootstrap:src .venv/bin/python -m trance_lora generate --list-versio
 依赖只有三个：`torch`（CPU 版即可）、`numpy`、`mido`。
 
 > 如果默认源装不到适合的 torch，用官方 CPU 轮子：
-> `at
-> .venv\Scripts\python.exe -m pip install torch --index-url https://download.pytorch.org/whl/cpu
-> `
-> Linux / macOS：`pip install torch --index-url https://download.pytorch.org/whl/cpu`，启动器用
-> `PYTHONPATH=_bootstrap:src .venv/bin/python -m trance_lora ...`（`trance.cmd` 仅 Windows 用）。
+
+```bat
+.venv\Scripts\python.exe -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+```
+
+Linux / macOS：`pip install torch --index-url https://download.pytorch.org/whl/cpu`，启动器用
+`PYTHONPATH=_bootstrap:src .venv/bin/python -m trance_lora ...`（`trance.cmd` 仅 Windows 用）。
 
 ## 5. 快速开始
 

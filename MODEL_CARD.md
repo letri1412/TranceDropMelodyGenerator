@@ -1,5 +1,10 @@
 # Model Card — TranceDropMelodyGenerator v2
 
+## 在线地址
+
+* GitHub: https://github.com/letri1412/TranceDropMelodyGenerator
+* ModelScope（魔搭）: https://www.modelscope.cn/models/letri1412/TranceDropMelodyGenerator
+
 ## 概览
 给定**调性 + BPM + 和弦进行 + 16 分节奏型**，生成 8 小节 Trance drop 主旋律（MIDI，含旋律轨 + 低音踏板层）。
 两套交付版本：**v1** = 绝对音高模型；**v2** = v1 与音程（interval）模型的 logit 混合（mix=0.35，默认）。

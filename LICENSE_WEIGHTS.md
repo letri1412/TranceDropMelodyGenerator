@@ -1,5 +1,10 @@
 # 模型权重许可（基于 OpenRAIL-M 的定制许可）
 
+## 在线地址
+
+* GitHub: https://github.com/letri1412/TranceDropMelodyGenerator
+* ModelScope（魔搭）: https://www.modelscope.cn/models/letri1412/TranceDropMelodyGenerator
+
 版权 (c) 2026 letri1412。模型权重包括 `runs/final_motif_s*/model.pt`（v1/pitch）与
 `runs/stepA_final_motif_s*/model.pt`（v2/interval），以及任何由本仓库脚本导出的模型文件。
 

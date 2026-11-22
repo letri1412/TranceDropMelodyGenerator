@@ -9,11 +9,14 @@ TOOL = "TranceDropMelodyGenerator"
 DEFAULT_VERSION = "v2"
 CANARY = "TRANCE-LORA-V2-CANARY-20261122-7f3a9c"
 REPO = "https://github.com/letri1412/TranceDropMelodyGenerator"
+MODELSCOPE = "https://www.modelscope.cn/models/letri1412/TranceDropMelodyGenerator"
 
 
 def watermark_text(version: str | None = None) -> str:
     v = version or os.environ.get("TRANCE_WATERMARK_VERSION") or DEFAULT_VERSION
-    return f"{TOOL} {v} | author: {AUTHOR} | {CANARY} | {REPO}"
+    return (f"{TOOL} {v} | author: {AUTHOR} | {CANARY} | "
+            f"github.com/letri1412/TranceDropMelodyGenerator | "
+            f"modelscope.cn/models/letri1412/TranceDropMelodyGenerator")
 
 
 def copyright_text() -> str:
